@@ -1,0 +1,107 @@
+openapi: 3.0.0
+info:
+  title: Sample API
+  version: 1.0.0
+paths:
+  /api/resource1:
+    get:
+      summary: Get Resource 1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              example:
+                message: "Success"
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              example:
+                error: "Bad request. Please check your request parameters."
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              example:
+                error: "Internal Server Error. Please try again later."
+    post:
+      summary: Create Resource 1
+      requestBody:
+        required: true
+        content:
+          application/json:
+            example:
+              data:
+                name: "New Resource 1"
+                value: 42
+      responses:
+        '201':
+          description: Resource created
+          content:
+            application/json:
+              example:
+                message: "Resource created successfully"
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              example:
+                error: "Bad request. Please check your request parameters."
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              example:
+                error: "Internal Server Error. Please try again later."
+  /api/resource2:
+    get:
+      summary: Get Resource 2
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              example:
+                data: "Resource 2 content"
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              example:
+                error: "Bad request. Please check your request parameters."
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              example:
+                error: "Internal Server Error. Please try again later."
+    post:
+      summary: Create Resource 2
+      requestBody:
+        required: true
+        content:
+          application/json:
+            example:
+              data:
+                title: "New Resource 2"
+                description: "Some description"
+      responses:
+        '201':
+          description: Resource created
+          content:
+            application/json:
+              example:
+                message: "Resource created successfully"
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              example:
+                error: "Bad request. Please check your request parameters."
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              example:
+                error: "Internal Server Error. Please try again later."
